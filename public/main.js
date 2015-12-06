@@ -15,11 +15,13 @@ function render(data) {
 }
 
 function addMessage(event) {
+  var domTexto = document.getElementById('texto');
   var payload = {
     author: author,
-    text: document.getElementById('texto').value
+    text: domTexto.value
   };
 
   socket.emit('new-message', payload);
+  domTexto.value = '';
   return false;
 }
