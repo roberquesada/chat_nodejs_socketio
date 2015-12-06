@@ -1,3 +1,4 @@
+var author = prompt('Write your name');
 var socket = io.connect('http://localhost:8080', {'forceNew': true});
 
 socket.on('messages', function(data) {
@@ -15,7 +16,7 @@ function render(data) {
 
 function addMessage(event) {
   var payload = {
-    author: document.getElementById('username').value,
+    author: author,
     text: document.getElementById('texto').value
   };
 
